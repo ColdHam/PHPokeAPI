@@ -1,0 +1,6 @@
+php:
+    - 5.3
+    - 5.4
+
+script:
+    cd tests\ && php tests.php
