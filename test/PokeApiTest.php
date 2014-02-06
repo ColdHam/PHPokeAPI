@@ -1,67 +1,129 @@
 <?php
 
-namespace PokeApi\PokeApiTest;
-
-$file_to_include = "../vendor/phpunit/phpunit/PHPUnit/Autoload.php";
-if (file_exists($file_to_include)) {
-    include_once $file_to_include;
-}
-
-$file_to_include = "../phpokeapi/PokeApi.php";
-if (file_exists($file_to_include)) {
-    include_once $file_to_include;
-}
+namespace PokeApi;
 
 class PokeApiTest extends PHPUnit_Framework_TestCase
 {
 
+    public function setUp()
+    {
+        $file_to_include = "../vendor/phpunit/phpunit/PHPUnit/Autoload.php";
+        if (file_exists($file_to_include)) {
+            include_once $file_to_include;
+        }
+
+        $file_to_include = "../phpokeapi/PokeApi.php";
+        if (file_exists($file_to_include)) {
+            include_once $file_to_include;
+        }
+    }
+
     public function testGetPokedex()
     {
+        $api = new PokeApi();
+        $data = $api->getPokedex();
+
 
     }
 
-    public function testGetPokemon($id = null)
+    public function testGetPokemon()
     {
+        $api = new PokeApi();
+        $data = $api->getPokemon(1);
+
+        $result = $pkm->name;
+        $expected = 'Bulbasaur';
+
+        $this->assertEquals($expected, $result);
 
     }
 
-    public function testGetType($id = null)
+    public function testGetType()
     {
+        $api = new PokeApi();
+        $data = $api->getType(1);
 
+        $result = $typ->name;
+        $expected = 'Normal';
+
+        $this->assertEquals($expected, $result);
     }
 
-    public function testGetMove($id = null)
+    public function testGetMove()
     {
+        $api = new PokeApi();
+        $data = $api->getMove(1);
 
+        $result = $data->name;
+        $expected = "Pound";
+
+        $this->assertEquals($expected, $result);
     }
 
-    public function testGetAbility($id = null)
+    public function testGetAbility()
     {
+        $api = new PokeApi();
+        $data = $api->getAbility(1);
+        
+        $result = $data->name;
+        $expected = "Stench";
 
+        $this->assertEquals($expected, $result);
     }
 
-    public function testGetEggGroup($id = null)
+    public function testGetEggGroup()
     {
+        $api = new PokeApi();
+        $data = $api->getEggGroup(1);
+        
+        $result = $data->name;
+        $expected = "Monster";
 
+        $this->assertEquals($expected, $result);
     }
-    public function testGetDescription($id = null)
+    public function testGetDescription()
     {
+        $api = new PokeApi();
+        $data = $api->getDescription(2);
+        
+        $result = $data->name;
+        $expected = "Bulbasaur_gen_1";
 
+        $this->assertEquals($expected, $result);
     }
 
-    public function testGetSprite($id = null)
+    public function testGetSprite()
     {
+        $api = new PokeApi();
+        $data = $api->getSprite(1);
+        
+        $result = $data->name;
+        $expected = "Bulbasaur_red_blue";
 
+        $this->assertEquals($expected, $result);
     }
 
-    public function testGetGame($id = null)
+    public function testGetGame()
     {
+        $api = new PokeApi();
+        $data = $api->getGame(1);
+        
+        $result = $data->name;
+        $expected = "Red(jpn)";
 
+        $this->assertEquals($expected, $result);
     }
 
-    public function testGetRessource($uri)
+    public function testGetRessource()
     {
+        $api = new PokeApi();
+        $uri = '';
+        $res = $api->getRessource('/api/v1/egg/1/');
+        
+        $result = $data->name;
+        $expected = "Monster";
 
+        $this->assertEquals($expected, $result);
     }
 
 }

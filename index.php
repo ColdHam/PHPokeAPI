@@ -7,7 +7,7 @@
  * @version      1.0                                  *
  *****************************************************/
 
-require "./lib/pokeAPI.php";
+require "./phpokeapi/PokeApi.php";
 $api = new PokeAPI();
 
 ?>
