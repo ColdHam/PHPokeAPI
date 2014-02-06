@@ -213,3 +213,12 @@ pip-log.txt
 
 #Mr Developer
 .mr.developer.cfg
+
+#############
+## Perso
+#############
+
+vendor/composer
+vendor/phpunit
+vendor/symfony
+vendor/autoload.php
