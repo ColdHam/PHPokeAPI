@@ -1,204 +1,166 @@
 <?php
 
-/******************************************************
- * PokeAPI - PH[P]okeAPI                              *
- * ================================================== *
- * @author       Nicolas Tournier <@n1c0l4stournier>  *
- * @version      1.0                                  *
- *****************************************************/
+namespace PokeApi\PokeApi;
 
-class PokeAPI {
+class PokeApi
+{
+    var $endpoint = "http://pokeapi.co/api/v1";
 
-	public $endpoint = "http://pokeapi.co/api/v1";
+    public function __construct()
+    {
 
-	/**
-	 *	testing if cURL is installed
-	 *
-	 */
-	public function __construct() {
+        if (!function_exists('curl_init')) {
 
-        if(!function_exists('curl_init'))
             throw new Exception('The cURL module could not be loaded, and is needed to retrieve API data.');
+            
+        }
 
     }
 
-	/**
-	 *	
-	 *
-	 */
-	public function getPokedex() {
+    public function getPokedex()
+    {
 
-		$option = "pokedex";
-		return $this->get(1, $option);
+        $option = "pokedex";
+        return $this->get(1, $option);
 
-	}
+    }
 
+    public function getPokemon($id = null)
+    {
 
-	/**
-	 *	
-	 *
-	 */
-	public function getPokemon($id = NULL) {
+        $option = "pokemon";
+        return $this->get($id, $option);
 
-		$option = "pokemon";
-		return $this->get($id, $option);
+    }
 
-	}
+    public function getType($id = null)
+    {
 
+        $option = "type";
+        return $this->get($id, $option);
 
-	/**
-	 *	
-	 *
-	 */
-	public function getType($id = NULL) {
+    }
 
-		$option = "type";
-		return $this->get($id, $option);
+    public function getMove($id = null)
+    {
 
-	}
+        $option = "move";
+        return $this->get($id, $option);
 
+    }
 
-	/**
-	 *	
-	 *
-	 */
-	public function getMove($id = NULL) {
+    public function getAbility($id = null)
+    {
 
-		$option = "move";
-		return $this->get($id, $option);
+        $option = "ability";
+        return $this->get($id, $option);
 
-	}
+    }
 
+    public function getEggGroup($id = null)
+    {
 
-	/**
-	 *	
-	 *
-	 */
-	public function getAbility($id = NULL) {
+        $option = "egg";
+        return $this->get($id, $option);
 
-		$option = "ability";
-		return $this->get($id, $option);
+    }
 
-	}
+    public function getDescription($id = null)
+    {
 
+        $option = "description";
+        return $this->get($id, $option);
 
-	/**
-	 *	
-	 *
-	 */
-	public function getEggGroup($id = NULL) {
+    }
 
-		$option = "egg";
-		return $this->get($id, $option);
+    public function getSprite($id = null)
+    {
 
-	}
+        $option = "sprite";
+        return $this->get($id, $option);
 
+    }
 
-	/**
-	 *	
-	 *
-	 */
-	public function getDescription($id = NULL) {
+    public function getGame($id = null)
+    {
 
-		$option = "description";
-		return $this->get($id, $option);
+        $option = "game";
+        return $this->get($id, $option);
 
-	}
+    }
 
+    public function getRessource($uri)
+    {
+        
+        $id = null;
+        $option = null;
+        $uri = explode("/", $uri);
 
-	/**
-	 *	
-	 *
-	 */
-	public function getSprite($id = NULL) {
+        foreach ($uri as $d) {
 
-		$option = "sprite";
-		return $this->get($id, $option);
+            if ($d != 'api' && $d != 'v1' && !empty($d)) {
 
-	}
+                if (is_numeric($d)) {
 
+                    $id = $d;
 
-	/**
-	 *	
-	 *
-	 */
-	public function getGame($id = NULL) {
+                } else {
 
-		$option = "game";
-		return $this->get($id, $option);
+                    $option = $d;
 
-	}
+                }
+            }
 
+        }
 
-	/**
-	 *	ressource_uri = /api/vi/{string}/{int}
-	 *	string $option = {string}
-	 *	int $id = {int}
-	 */
-	public function getRessource($uri)
-	{
-		$uri = explode("/", $uri);
-		
-		$id = NULL; 
-		$option = NULL;
-		foreach ($uri as $d) {
-			if ($d != 'api' && $d != 'v1' && !empty($d)) {
-				if(is_numeric($d))
-					$id = $d;
-				else
-					$option = $d;
-			}
-		}
-		return $this->get($id, $option);
-	}
+        return $this->get($id, $option);
+    }
 
+    private function get($id = null, $option = null)
+    {
 
-	/**
-	 *	return the decoded JSON data into stdClass Object
-	 *
-	 */
-	private function get($id = NULL, $option = NULL) {
+        if ($id == null || $option == null) {
 
-		if ($id == NULL || $option == NULL)
             throw new Exception('Empty data.');
-		else 
-			return $this->curl($this->endpoint . "/" . $option . "/" . $id . "/");
 
-	}
+        } else {
 
+            return $this->curl($this->endpoint . "/" . $option . "/" . $id . "/");
 
-	/**
-	 *	send request to the API and return the decoded JSON data into stdClass Object
-	 *
-	 */
-	private function curl($url = NULL) {
+        }
 
-		if ($url == NULL)
-			return FALSE;
+    }
 
-		else {
+    private function curl($url = null)
+    {
 
-	        $ch = curl_init();
-	        curl_setopt($ch, CURLOPT_URL, $url);
-	        curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
-	        curl_setopt($ch, CURLOPT_FOLLOWLOCATION, true);
-	        curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, false);
-	        curl_setopt($ch, CURLOPT_SSL_VERIFYHOST, false);
-	        curl_setopt($ch, CURLOPT_AUTOREFERER, true);
+        if ($url == null) {
 
-	        // sending the request to the API
-	        $result = curl_exec($ch);
+            return false;
 
-	        // decoding the JSON data
-	        $result = json_decode($result);
+        } else {
 
-	        if (!$result)
-	        	return FALSE;
+            $ch = curl_init();
+            curl_setopt($ch, CURLOPT_URL, $url);
+            curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+            curl_setopt($ch, CURLOPT_FOLLOWLOCATION, true);
+            curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, false);
+            curl_setopt($ch, CURLOPT_SSL_VERIFYHOST, false);
+            curl_setopt($ch, CURLOPT_AUTOREFERER, true);
 
-	        return $result;
-		}
-	}
+            // sending the request to the API
+            $result = curl_exec($ch);
 
+            // decoding the JSON data
+            $result = json_decode($result);
+
+            if (!$result) {
+
+                return false;
+
+            }
+
+            return $result;
+        }
+    }
 }
-
-?>

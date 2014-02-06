@@ -1,59 +1,59 @@
 <?php
 
-require_once '../vendor/phpunit/phpunit/PHPUnit/Autoload.php';
-require_once '../lib/PokeAPI.php';
+include "../lib/PokeApi.php";
+include "../vendor/phpunit/phpunit/PHPUnit/Autoload.php";
 
-class PokeAPITest extends PHPUnit_Framework_TestCase {
+namespace PokeApi\PokeApiTest;
 
-	public function testGetPokedex() 
-	{
+class PokeApiTest extends PHPUnit_Framework_TestCase
+{
 
-	}
+    public function testGetPokedex()
+    {
 
-	public function testGetPokemon($id = NULL) 
-	{
+    }
 
-	}
+    public function testGetPokemon($id = null)
+    {
 
-	public function testGetType($id = NULL) 
-	{
+    }
 
-	}
+    public function testGetType($id = null)
+    {
 
-	public function testGetMove($id = NULL) 
-	{
+    }
 
-	}
+    public function testGetMove($id = null)
+    {
 
-	public function testGetAbility($id = NULL) 
-	{
+    }
 
-	}
+    public function testGetAbility($id = null)
+    {
 
-	public function testGetEggGroup($id = NULL) 
-	{
+    }
 
-	}
-	public function testGetDescription($id = NULL) 
-	{
+    public function testGetEggGroup($id = null)
+    {
 
-	}
+    }
+    public function testGetDescription($id = null)
+    {
 
-	public function testGetSprite($id = NULL) 
-	{
+    }
 
-	}
+    public function testGetSprite($id = null)
+    {
 
-	public function testGetGame($id = NULL) 
-	{
+    }
 
-	}
+    public function testGetGame($id = null)
+    {
 
-	public function testGetRessource($uri)
-	{
+    }
 
-	}
+    public function testGetRessource($uri)
+    {
 
+    }
 }
-
-?>
