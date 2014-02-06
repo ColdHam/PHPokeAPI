@@ -1,5 +1,6 @@
 {
     "name": "phpokeapi/phpokeapi",
+    "version": "1.0.0",
     "description": "Basic PHP wrapper for PokeAPI",
     "authors": [
         {

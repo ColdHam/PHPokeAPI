@@ -1,10 +1,7 @@
 {
   "name": "phpokeapi",
-  "version": "0.0.0",
+  "version": "1.0.0",
   "description": "Basic PHP wrapper for PokeAPI",
-  "directories": {
-    "test": "test"
-  },
   "repository": {
     "type": "git",
     "url": "https://github.com/n1c0l4stournier/PHPokeAPI.git"

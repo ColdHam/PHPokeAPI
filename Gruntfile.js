@@ -7,18 +7,18 @@ module.exports = function(grunt)
 
 		phpcs: {
 			application: {
-				dir: "lib/"
+				dir: "phpokeapi/"
 			},
 			options: {
 				bin: "phpcs",
-				standard: "PSR2"
+				standard: "PSR1"
 			}
 		},
 
 
 		watch: {
 			php: {
-				files: ['lib/*.php'],
+				files: ['phpokeapi/*.php'],
 				tasks: ['phpcs'],
 				options: {
 					spawn: false
