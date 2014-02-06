@@ -13,10 +13,8 @@
  *
  */
 
-//namespace PokeApi;
-
 /**
- * PokeAPI class
+ * PokeApi class
  *
  * @category Wrapper
  * @package  PokeApi
