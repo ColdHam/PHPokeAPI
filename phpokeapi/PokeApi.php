@@ -1,7 +1,7 @@
 <?php
 
 /**
- * Simple PHP wrappar for PokeAPI : http://pokeapi.co/
+ * Simple PHP wrapper for PokeAPI : http://pokeapi.co/
  *
  * PHP version 5
  *
