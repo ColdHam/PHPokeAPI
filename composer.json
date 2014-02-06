@@ -1,0 +1,17 @@
+{
+    "name": "phpokeapi/phpokeapi",
+    "version": "1.0.0",
+    "description": "Basic PHP wrapper for PokeAPI",
+    "authors": [
+        {
+            "name": "Nicolas Tournier",
+            "email": "nicolas.tournier@outlook.com"
+        }
+    ],
+    "require": {
+
+    },
+    "require-dev": {
+        "phpunit/phpunit": "3.7.*"
+    }
+}
