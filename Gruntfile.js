@@ -7,7 +7,7 @@ module.exports = function(grunt)
 
 		phpcs: {
 			application: {
-				dir: "test/"
+				dir: "lib/"
 			},
 			options: {
 				bin: "phpcs",

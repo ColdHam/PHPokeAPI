@@ -4,7 +4,8 @@ namespace PokeApi\PokeApi;
 
 class PokeApi
 {
-    var $endpoint = "http://pokeapi.co/api/v1";
+    
+    public $endpoint = "http://pokeapi.co/api/v1";
 
     public function __construct()
     {

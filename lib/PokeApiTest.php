@@ -1,6 +1,6 @@
 <?php
 
-include "../lib/PokeApi.php";
+include "PokeApi.php";
 include "../vendor/phpunit/phpunit/PHPUnit/Autoload.php";
 
 namespace PokeApi\PokeApiTest;
