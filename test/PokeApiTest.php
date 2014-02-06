@@ -1,11 +1,13 @@
 <?php
 
-
 namespace PokeApi\PokeApiTest;
 
-use PokeApi\PokeApi;
-
 $file_to_include = "../vendor/phpunit/phpunit/PHPUnit/Autoload.php";
+if (file_exists($file_to_include)) {
+    include_once $file_to_include;
+}
+
+$file_to_include = "../phpokeapi/PokeApi.php";
 if (file_exists($file_to_include)) {
     include_once $file_to_include;
 }
