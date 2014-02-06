@@ -218,15 +218,8 @@ pip-log.txt
 ## Perso
 #############
 
-<<<<<<< HEAD
-vendor/
 node_modules/
-=======
 vendor/composer
 vendor/phpunit
 vendor/symfony
 vendor/autoload.php
-node_modules/
-
-visualphpunit/
->>>>>>> draft
