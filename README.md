@@ -11,16 +11,3 @@ Requirements
 * PHP 5.2+
 * [cURL](http://php.net/curl) PHP Extension
 * [JSON](http://php.net/json) PHP Extension
-
-
-Installation
-============
-
-Simply include the `/phpokeapi/pokeAPI.php` file into your script.
-
-	<?php
-
-	require './phpokeapi/PokeApi.php';
-	$api = new PokeAPI();
-	
-	?>
