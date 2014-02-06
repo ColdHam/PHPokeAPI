@@ -1,10 +1,8 @@
 module.exports = function(grunt) 
 {
-
 	require('load-grunt-tasks')(grunt);
 
 	grunt.initConfig({
-
 		phpcs: {
 			application: {
 				dir: "phpokeapi/"
@@ -14,8 +12,6 @@ module.exports = function(grunt)
 				standard: "PHPCS"
 			}
 		},
-
-
 		watch: {
 			php: {
 				files: ['phpokeapi/*.php'],
@@ -25,10 +21,8 @@ module.exports = function(grunt)
 				}
 			}
 		}
-
-
 	});
 
 	grunt.registerTask('default', ['phpcs']);
-
+	
 }
