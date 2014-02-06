@@ -222,3 +222,4 @@ vendor/composer
 vendor/phpunit
 vendor/symfony
 vendor/autoload.php
+node_modules/

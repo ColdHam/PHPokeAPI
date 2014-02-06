@@ -1,5 +1,5 @@
 {
-  "name": "phpokeapi/phpokeapi",
+  "name": "phpokeapi",
   "version": "0.0.0",
   "description": "Basic PHP wrapper for PokeAPI",
   "directories": {
@@ -10,13 +10,16 @@
     "url": "https://github.com/n1c0l4stournier/PHPokeAPI.git"
   },
   "authors": [
-      {
-          "name": "Nicolas Tournier",
-          "email": "nicolas.tournier@outlook.com"
-      }
+    {
+      "name": "Nicolas Tournier",
+      "email": "nicolas.tournier@outlook.com"
+    }
   ],
   "bugs": {
     "url": "https://github.com/n1c0l4stournier/PHPokeAPI/issues"
   },
-  "homepage": "https://github.com/n1c0l4stournier/PHPokeAPI"
+  "homepage": "https://github.com/n1c0l4stournier/PHPokeAPI",
+  "devDependencies": {
+    "grunt": "~0.4.2"
+  }
 }
