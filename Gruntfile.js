@@ -11,7 +11,7 @@ module.exports = function(grunt)
 			},
 			options: {
 				bin: "phpcs",
-				standard: "PSR1"
+				standard: "PHPCS"
 			}
 		},
 
