@@ -1,21 +1,13 @@
 <?php
 
-namespace PokeApi;
+//namespace PokeApi;
 
 class PokeApiTest extends PHPUnit_Framework_TestCase
 {
 
     public function setUp()
     {
-        $file_to_include = "../vendor/phpunit/phpunit/PHPUnit/Autoload.php";
-        if (file_exists($file_to_include)) {
-            include_once $file_to_include;
-        }
-
-        $file_to_include = "../phpokeapi/PokeApi.php";
-        if (file_exists($file_to_include)) {
-            include_once $file_to_include;
-        }
+        include_once "PokeApi.php";
     }
 
     public function testGetPokedex()
@@ -31,7 +23,7 @@ class PokeApiTest extends PHPUnit_Framework_TestCase
         $api = new PokeApi();
         $data = $api->getPokemon(1);
 
-        $result = $pkm->name;
+        $result = $data->name;
         $expected = 'Bulbasaur';
 
         $this->assertEquals($expected, $result);
@@ -43,7 +35,7 @@ class PokeApiTest extends PHPUnit_Framework_TestCase
         $api = new PokeApi();
         $data = $api->getType(1);
 
-        $result = $typ->name;
+        $result = $data->name;
         $expected = 'Normal';
 
         $this->assertEquals($expected, $result);
@@ -118,7 +110,7 @@ class PokeApiTest extends PHPUnit_Framework_TestCase
     {
         $api = new PokeApi();
         $uri = '';
-        $res = $api->getRessource('/api/v1/egg/1/');
+        $data = $api->getRessource('/api/v1/egg/1/');
         
         $result = $data->name;
         $expected = "Monster";

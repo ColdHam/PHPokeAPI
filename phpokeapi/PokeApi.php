@@ -13,7 +13,7 @@
  *
  */
 
-namespace PokeApi;
+//namespace PokeApi;
 
 /**
  * PokeAPI class

@@ -5,4 +5,4 @@ php:
     - 5.4
 
 script:
-    - phpunit test/PokeApiTest.php
+    - phpunit phpokeapi/PokeApiTest.php
