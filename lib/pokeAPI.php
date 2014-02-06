@@ -160,7 +160,7 @@ class PokeAPI {
 	private function get($id = NULL, $option = NULL) {
 
 		if ($id == NULL || $option == NULL)
-			return FALSE;
+            throw new Exception('Empty data.');
 		else 
 			return $this->curl($this->endpoint . "/" . $option . "/" . $id . "/");
 
